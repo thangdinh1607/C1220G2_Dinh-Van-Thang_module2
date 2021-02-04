@@ -14,7 +14,7 @@ public class DeleteElement {
         int[] array = {1, 1, 3, 3, 5, 6, 7, 8, 9, 0, 0, 2};
         int x;
         int index;
-        int count=0;
+        int count = 0;
         Scanner input = new Scanner(System.in);
 
 
@@ -23,16 +23,16 @@ public class DeleteElement {
         for (int i = 0; i < array.length; i++) {
 
             if (array[i] == x) {
-                if (i < array.length-1) {
+                if (i < array.length - 1) {
                     index = i;
                     for (int j : deleteElement(array, index)) {
                         System.out.println(j);
                     }
                     count++;
                     break;
-                }else{
-                    array[array.length-1]=0;
-                    index=array.length-1;
+                } else {
+                    array[array.length - 1] = 0;
+                    index = array.length - 1;
                     for (int j : deleteElement(array, index)) {
                         System.out.println(j);
                     }
@@ -41,8 +41,8 @@ public class DeleteElement {
                 }
             }
         }
-        if (count==0){
-            System.out.println(x +" not in the Array");
+        if (count == 0) {
+            System.out.println(x + " not in the Array");
         }
     }
 }
