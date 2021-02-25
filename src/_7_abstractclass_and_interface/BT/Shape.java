@@ -27,15 +27,17 @@ public class Shape implements Resizeable {
         this.filled = filled;
     }
 
+
+    public  double getArea(){ return 0.0;}
+
+
+    public void resize(double percent) {
+    }
     @Override
     public String toString() {
         return "Shape{" +
                 "color='" + color + '\'' + "and "+
-                 (isFilled() ? "filled" : "not filled");
-    }
-
-    @Override
-    public void resize(double percent) {
+                (isFilled() ? "filled" : "not filled");
     }
 }
 class Circle extends Shape implements Resizeable{
@@ -56,6 +58,8 @@ class Circle extends Shape implements Resizeable{
     public void setRadius(double radius) {
         this.radius = radius;
     }
+
+    @Override
     public double getArea(){
         return radius*radius*Math.PI;
     }
@@ -69,9 +73,8 @@ class Circle extends Shape implements Resizeable{
 
     @Override
     public void resize(double percent) {
-        double newCircle = this.getArea() * (percent / 100);
+        double newCircle = this.getArea() * (percent / 100)+this.getArea();
         System.out.println(newCircle);
-        System.out.println();
     }
 }
 class Rectangle extends Shape implements Resizeable{
@@ -114,9 +117,8 @@ class Rectangle extends Shape implements Resizeable{
 
     @Override
     public void resize(double percent) {
-        double newRectangle = this.getArea() * (percent / 100);
+        double newRectangle = this.getArea() * (percent / 100) + this.getArea();
         System.out.println(newRectangle);
-        System.out.println();
     }
 }
 class Square extends Shape implements Resizeable{
@@ -149,9 +151,8 @@ class Square extends Shape implements Resizeable{
 
     @Override
     public void resize(double percent) {
-        double newSquare = this.getArea() * (percent / 100);
+        double newSquare = this.getArea() * (percent / 100)+this.getArea();
         System.out.println(newSquare);
-        System.out.println();
     }
 }
 

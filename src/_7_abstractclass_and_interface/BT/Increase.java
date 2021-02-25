@@ -7,8 +7,17 @@ public class Increase {
             shapes[1]=new Rectangle("blue",true,3.0,5.0);
             shapes[2]=new Square("red",true,2.0);
 
-            System.out.println("Area Circle =" + shapes[0]);
-            System.out.println("Area Rectangle =" + shapes[1]);
-            System.out.println("Area Square =" + shapes[2]);
+            System.out.println("Area Circle =" + shapes[0].getArea());
+            System.out.println("Area Rectangle =" + shapes[1].getArea());
+            System.out.println("Area Square =" + shapes[2].getArea());
+
+
+            System.out.println("Increase Area Circle =");
+            shapes[0].resize(Math.random()*100);
+            System.out.println("Increase Area Rectangle =");
+            shapes[0].resize(Math.random()*100);
+            System.out.println("Increase Area Square =");
+            shapes[0].resize(Math.random()*100);
+
     }
 }
