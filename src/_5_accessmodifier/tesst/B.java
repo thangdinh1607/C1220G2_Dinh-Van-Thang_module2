@@ -1,0 +1,9 @@
+package _5_accessmodifier.tesst;
+
+public class B {
+     static double BB =1.0;
+
+    public static void main(String[] args) {
+        System.out.println(B.BB);
+    }
+}
