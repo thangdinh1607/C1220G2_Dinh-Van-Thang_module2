@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class ConsecutiveString {
     static List<Character> consecutiveString(String str) {
          List<Character> characterList = new LinkedList<>();
-        List<Character> max = new LinkedList<>();
+         List<Character> max = new LinkedList<>();
 
         for (int i = 0; i < str.length(); i++) {
             if (characterList.size() < 1) {
