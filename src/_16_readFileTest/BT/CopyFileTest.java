@@ -9,33 +9,31 @@ public class CopyFileTest {
 //    public static final String linkFileReader = "C:\\Users\\thang\\Desktop\\a2.txt";
 //    public static final String linkFileWrite = "C:\\Users\\thang\\Desktop\\a1.txt";
 
-    ArrayList<String> readerFile(String linkRead, String linkWrite) throws FileNotFoundException {
+    void readerFile(String linkRead, String linkWrite) throws FileNotFoundException {
         File fileRead = new File(linkRead);
         File fileWrite = new File(linkWrite);
-        ArrayList<String> arrayList = new ArrayList<>();
-
+        FileReader fileReader;
+        BufferedReader bufferedReader;
+        FileWriter fileWriter;
+        BufferedWriter bufferedWriter;
         try {
-            FileReader fileReader = new FileReader(fileRead);
-            BufferedReader bufferedReader = new BufferedReader(fileReader);
-            FileWriter fileWriter = new FileWriter(fileWrite);
-            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+            fileReader = new FileReader(fileRead);
+            bufferedReader = new BufferedReader(fileReader);
+            fileWriter = new FileWriter(fileWrite);
+            bufferedWriter = new BufferedWriter(fileWriter);
             if (!fileRead.exists()) {
                 throw new FileNotFoundException();
             }
             String line;
-            int i = 0;
             while ((line = bufferedReader.readLine()) != null) {
-                bufferedWriter.write(line);
+                bufferedWriter.write(line + "\n");
             }
             bufferedReader.close();
-            bufferedWriter.close();
+            bufferedWriter.flush();
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return arrayList;
     }
-
-
     public static void main(String[] args) throws FileNotFoundException {
         CopyFileTest copyFileTest = new CopyFileTest();
         copyFileTest.readerFile("C:\\Users\\thang\\Desktop\\a2.txt", "C:\\Users\\thang\\Desktop\\a1.txt");
