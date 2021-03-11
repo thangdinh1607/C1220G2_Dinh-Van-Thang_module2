@@ -9,13 +9,13 @@ public class Vehicle {
     private String name;
     private int since;
     private String color = "";
-    private double capacity;
-    private double price;
+    private int capacity;
+    private int price;
 
     public Vehicle() {
     }
 
-    public Vehicle(String name, int since, String color, double capacity, double price) {
+    public Vehicle(String name, int since, String color, int capacity, int price) {
         this.name = name;
         this.since = since;
         this.color = color;
@@ -51,7 +51,7 @@ public class Vehicle {
         return capacity;
     }
 
-    public void setCapacity(double capacity) {
+    public void setCapacity(int capacity) {
         this.capacity = capacity;
     }
 
@@ -59,57 +59,20 @@ public class Vehicle {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(int price) {
         this.price = price;
     }
 
-    String getTax() {
-        if (this.capacity < 100) {
-            return "motorbike name" + this.name + "Tax: " + this.price / 100;
-        } else if (this.capacity < 200) {
-            return "motorbike name" + this.name + "Tax: " + this.price * 3 / 100;
-        } else
-            return "motorbike name" + this.name + "Tax: " + this.price * 5 / 100;
-    }
-
-     Vehicle motorInformation() {
-        Vehicle motorbike = new Vehicle();
-        Scanner input = new Scanner(System.in);
-
-        System.out.println("Input motorbike name ");
-        String name = input.nextLine();
-        motorbike.setName(name);
-
-        System.out.println("Input motorbike since ");
-        int since = input.nextInt();
-        motorbike.setSince(since);
-
-        System.out.println("Input motorbike color ");
-        String color = input.nextLine();
-        motorbike.setColor(color);
-
-        System.out.println("Input motorbike capacity ");
-        double capacity = input.nextDouble();
-        motorbike.setCapacity(capacity);
-
-        System.out.println("Input motorbike price ");
-        double price = input.nextDouble();
-        motorbike.setPrice(price);
-
-        return motorbike;
-    }
 
 
-
-    public static void main(String[] args) {
-        List<Vehicle> motorbike= new ArrayList<>();
-       Scanner input = new Scanner(System.in);
-        System.out.println("1.Tạo các đối tượng xe và nhập thông tin" + "\n" +
-                "2.Xuất bảng kê khai tiền thuế của các xe." + "\n" +
-                "3.Thoát");
-        int a =input.nextInt();
-        switch (a){
-            case 1:
-        }
+    @Override
+    public String toString() {
+        return "Vehicle{" +
+                "name='" + name + '\'' +
+                ", since=" + since +
+                ", color='" + color + '\'' +
+                ", capacity=" + capacity +
+                ", price=" + price +
+                '}';
     }
 }
