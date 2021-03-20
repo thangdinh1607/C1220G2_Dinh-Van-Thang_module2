@@ -35,12 +35,9 @@ public class MainController {
     }
 
     public static void main(String[] args) throws Exception {
-//       AddNewCustomer addNewCustomer = new AddNewCustomer();
-//       addNewCustomer.addNewCustomer();
-//        AddNewServices addNewServices = new AddNewServices();
-//        addNewServices.addNewRoom();
-        ShowInFormationCustomer showInFormationCustomer = new ShowInFormationCustomer();
-        showInFormationCustomer.showInformationCustomer();
-
+    AddNewBooking addNewBooking = new AddNewBooking();
+    addNewBooking.addNewBooking(addNewBooking.bookingVilla());
+//AddNewServices addNewServices = new AddNewServices();
+//addNewServices.addNewHouse();
     }
 }

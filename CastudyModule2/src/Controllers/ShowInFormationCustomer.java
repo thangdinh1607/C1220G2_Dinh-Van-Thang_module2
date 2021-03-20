@@ -27,8 +27,10 @@ public class ShowInFormationCustomer {
             customerList1.add(customer);
         }
         Collections.sort(customerList1,new CustomerSortName());
+        int i=1;
         for(Customer customer :customerList1){
-            System.out.println(customer.showInFor());
+            System.out.println(i +". " + customer.showInFor());
+            i++;
         }
     }
 }

@@ -9,9 +9,9 @@ public class RegularExpression {
     public static final String ID_HOUSE = "^(SVHO)\\d{4}";
     public static final String ID_ROOM = "^(SVRO)\\d{4}";
 
-    public static final String NAME_SERVICES = "^[A-Z]\\w+$";
-    public static final String AREA_USED = "^[0-3](. \\d)?+$";
-    public static final String RENTAL_COST = "^\\d(.\\d)?+$";
+    public static final String NAME_SERVICES = "^([A-Z]\\w+ )+[A-Z]\\w+$";
+    public static final String AREA_USED = "^[3-9][0-9](.)(\\d)+$";
+    public static final String RENTAL_COST = "^\\d+(.)(\\d)+$";
     public static final String NUMBER_OF_PEOPLE = "^(0|1)\\d$";
     public static final String NUMBER_OF_FLOOR = "^\\d{2}$";
 
@@ -32,7 +32,7 @@ public class RegularExpression {
     public String checkNameServices() {
         String nameServices = null;
         do {
-            System.out.println("Enter name services :");
+            System.out.println("Enter name services--Thang Dinh :");
             nameServices = scanner.nextLine();
             check = Pattern.compile(NAME_SERVICES).matcher(nameServices).matches();
         } while (!check);
@@ -52,7 +52,7 @@ public class RegularExpression {
     public double checkRentalCost() {
         String rentalCost = null;
         do {
-            System.out.println("Enter numberOfPeople :");
+            System.out.println("Enter RentalCost :");
             rentalCost = scanner.nextLine();
             check = Pattern.compile(RENTAL_COST).matcher(rentalCost).matches();
         } while (!check);

@@ -9,11 +9,14 @@ import Models.Villa;
 import java.util.List;
 
 public class ShowServices {
+
     void showVilla() {
         ReaderFile rf = new ReaderFile();
         List<String[]> readerList = rf.readerFile(AddNewServices.LINK_VILLA);
         Villa villa = new Villa();
+        int i = 1;
         for (String[] service : readerList) {
+
             villa.setNameServices(service[0]);
             villa.setAreaUsed(Double.parseDouble(service[1]));
             villa.setRentalCost(Double.parseDouble(service[2]));
@@ -24,7 +27,8 @@ public class ShowServices {
             villa.setAreaPool(Double.parseDouble(service[7]));
             villa.setNumberOfFloor(Integer.parseInt(service[8]));
 
-            System.out.println(villa);
+            System.out.println(i + "--- " + villa);
+            i++;
         }
     }
 
@@ -32,6 +36,7 @@ public class ShowServices {
         ReaderFile rf = new ReaderFile();
         List<String[]> readerList = rf.readerFile(AddNewServices.LINK_HOUSE);
         House house = new House();
+        int i = 1;
         for (String[] service : readerList) {
             house.setNameServices(service[0]);
             house.setAreaUsed(Double.parseDouble(service[1]));
@@ -42,12 +47,14 @@ public class ShowServices {
             house.setOtherFacilities(service[6]);
             house.setNumberOfFloor(Integer.parseInt(service[7]));
 
-            System.out.println(house);
+            System.out.println(i + "--- " + house);
+            i++;
         }
     }
 
 
     void showRoom() {
+        int i = 1;
         ReaderFile rf = new ReaderFile();
         List<String[]> readerList = rf.readerFile(AddNewServices.LINK_ROOM);
         Room room = new Room();
@@ -59,12 +66,8 @@ public class ShowServices {
             room.setTypeOfRent(service[4]);
             room.setFreeServices(service[5]);
 
-            System.out.println(room);
+            System.out.println(i + "--- " + room);
+            i++;
         }
-    }
-
-    public static void main(String[] args) {
-        ShowServices showServices = new ShowServices();
-        showServices.showRoom();
     }
 }

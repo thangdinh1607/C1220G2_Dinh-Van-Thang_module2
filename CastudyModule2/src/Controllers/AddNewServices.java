@@ -35,7 +35,7 @@ public class AddNewServices {
         String standardRoom = re.checkStandardRoom();
         String otherFacilities = re.checkOtherFacilities();
         double areaPool = re.checkAreaPool();
-        int numberOfFloor = re.checkNumberOfPeople();
+        int numberOfFloor = re.checkNumberOfFloor();
 
         Services villa = new Villa(nameServices, areaUsed, rentalCost, numberOfPeople, typeOfRent, standardRoom, otherFacilities, areaPool, numberOfFloor);
         WriteFile wf = new WriteFile();
