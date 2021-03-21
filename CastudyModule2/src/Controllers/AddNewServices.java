@@ -16,6 +16,7 @@ public class AddNewServices {
     public static final String LINK_HOUSE = "F:\\C1220G2_Dinh-Van-Thang_module2\\CastudyModule2\\src\\Data\\Villa\\House.csv";
     public static final String LINK_ROOM = "F:\\C1220G2_Dinh-Van-Thang_module2\\CastudyModule2\\src\\Data\\Villa\\Room.csv";
     public static final String LINK_CUSTOMER = "F:\\C1220G2_Dinh-Van-Thang_module2\\CastudyModule2\\src\\Data\\Villa\\Customer.csv";
+    public static final String LINK_BOOKING = "F:\\C1220G2_Dinh-Van-Thang_module2\\CastudyModule2\\src\\Data\\Villa\\Booking.csv";
     RegularExpression re = new RegularExpression();
 
     void addNewServices() {

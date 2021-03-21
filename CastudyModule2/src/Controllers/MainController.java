@@ -2,6 +2,7 @@ package Controllers;
 
 import Commons.RegularExpression;
 import Models.Customer;
+import Models.Villa;
 
 import java.util.Scanner;
 
@@ -35,9 +36,9 @@ public class MainController {
     }
 
     public static void main(String[] args) throws Exception {
-    AddNewBooking addNewBooking = new AddNewBooking();
-    addNewBooking.addNewBooking(addNewBooking.bookingVilla());
-//AddNewServices addNewServices = new AddNewServices();
-//addNewServices.addNewHouse();
+          ShowServicesSet  showServicesSet = new ShowServicesSet();
+          showServicesSet.showServiceVilla();
+          showServicesSet.showServiceHouse();
+          showServicesSet.showServiceRoom();
     }
 }

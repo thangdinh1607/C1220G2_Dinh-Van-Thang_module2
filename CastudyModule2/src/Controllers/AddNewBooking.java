@@ -1,6 +1,7 @@
 package Controllers;
 
 import Commons.ReaderFile;
+import Commons.WriteFile;
 import Models.*;
 import com.sun.xml.internal.ws.api.model.wsdl.WSDLOutput;
 import org.w3c.dom.ls.LSOutput;
@@ -15,6 +16,7 @@ import java.util.Scanner;
 public class AddNewBooking {
     Scanner scanner = new Scanner(System.in);
     ReaderFile rf = new ReaderFile();
+    WriteFile wf = new WriteFile();
     ShowInFormationCustomer showInFormationCustomer = new ShowInFormationCustomer();
 
 
@@ -22,7 +24,7 @@ public class AddNewBooking {
 
         showInFormationCustomer.showInformationCustomer();
         System.out.println("Enter number customer :");
-        int menu = Integer.parseInt(scanner.nextLine());
+        int menu = Integer.parseInt(scanner.nextLine()) - 1;
 
         List<String[]> customerList = new ArrayList<>(rf.readerFile(AddNewServices.LINK_CUSTOMER));
         String[] arrCustomer = customerList.get(menu);
@@ -37,15 +39,17 @@ public class AddNewBooking {
         customer.setTypeOfCustomer(arrCustomer[6]);
         customer.setAddress(arrCustomer[7]);
         customer.setServices(service);
+
+        wf.writeFile(AddNewServices.LINK_BOOKING,customer);
     }
 
     Villa bookingVilla() {
         ShowServices showServices = new ShowServices();
         showServices.showVilla();
         System.out.println("Enter Number Villa : ");
-        int menu = Integer.parseInt(scanner.nextLine());
+        int menu = Integer.parseInt(scanner.nextLine()) - 1;
 
-        List<String[]> villaList = rf.readerFile(AddNewServices.LINK_CUSTOMER);
+        List<String[]> villaList = rf.readerFile(AddNewServices.LINK_VILLA);
         String[] stringVilla = villaList.get(menu);
 
         Villa villa = new Villa();
@@ -66,7 +70,7 @@ public class AddNewBooking {
         ShowServices showServices = new ShowServices();
         showServices.showHouse();
         System.out.println("Enter Number House : ");
-        int menu = Integer.parseInt(scanner.nextLine());
+        int menu = Integer.parseInt(scanner.nextLine()) -1;
 
         List<String[]> houseList = rf.readerFile(AddNewServices.LINK_HOUSE);
         String[] houseString = houseList.get(menu);
@@ -89,7 +93,7 @@ public class AddNewBooking {
         ShowServices showServices = new ShowServices();
         showServices.showRoom();
         System.out.println("Enter Number room : ");
-        int menu = Integer.parseInt(scanner.nextLine());
+        int menu = Integer.parseInt(scanner.nextLine()) -1 ;
 
         List<String[]> roomList = rf.readerFile(AddNewServices.LINK_ROOM);
         String[] roomString = roomList.get(menu);

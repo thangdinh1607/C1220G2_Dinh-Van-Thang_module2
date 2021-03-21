@@ -58,8 +58,8 @@ public class Villa extends Services {
     }
 
     @Override
-    String showInFor() {
-        return "Services{" +
+    public String showInFor() {
+        return "Villa{" +
                 "nameServices='" + super.getNameServices() + '\'' +
                 ", areaUsed=" + super.getAreaUsed() +
                 ", rentalCost=" + super.getRentalCost() +
@@ -79,4 +79,5 @@ public class Villa extends Services {
                 + areaPool + ","
                 + numberOfFloor;
     }
+
 }

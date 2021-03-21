@@ -130,6 +130,7 @@ public class Customer {
                 + phoneNumber + ","
                 + emailCustomer + ","
                 + typeOfCustomer + ","
-                + address;
+                + address+","
+                + services;
     }
 }

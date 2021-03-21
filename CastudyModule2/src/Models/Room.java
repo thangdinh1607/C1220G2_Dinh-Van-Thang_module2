@@ -31,8 +31,8 @@ public class Room extends Services {
     }
 
     @Override
-    String showInFor() {
-        return "Services{" +
+    public String showInFor() {
+        return "Room{" +
                 "nameServices='" + super.getNameServices() + '\'' +
                 ", areaUsed=" + super.getAreaUsed() +
                 ", rentalCost=" + super.getRentalCost() +

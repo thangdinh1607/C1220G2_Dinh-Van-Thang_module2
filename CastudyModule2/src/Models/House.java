@@ -48,8 +48,8 @@ public class House extends Services {
     }
 
     @Override
-    String showInFor() {
-        return "Services{" +
+    public String showInFor() {
+        return "House{" +
                 "nameServices='" + super.getNameServices() + '\'' +
                 ", areaUsed=" + super.getAreaUsed() +
                 ", rentalCost=" + super.getRentalCost() +
