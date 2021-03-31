@@ -36,9 +36,12 @@ public class MainController {
     }
 
     public static void main(String[] args) throws Exception {
-          ShowServicesSet  showServicesSet = new ShowServicesSet();
-          showServicesSet.showServiceVilla();
-          showServicesSet.showServiceHouse();
-          showServicesSet.showServiceRoom();
+//          ShowServicesSet  showServicesSet = new ShowServicesSet();
+//          showServicesSet.showServiceVilla();
+//          showServicesSet.showServiceHouse();
+//          showServicesSet.showServiceRoom();
+
+        AddNewBooking addNewBooking = new AddNewBooking();
+        addNewBooking.bookingVilla();
     }
 }
